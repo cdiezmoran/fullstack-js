@@ -1,0 +1,22 @@
+{
+  "name": "starter",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Carlos Diez <cdiezmoran@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/cdiezmoran/fullstack-js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
