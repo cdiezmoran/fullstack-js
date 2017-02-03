@@ -17,11 +17,23 @@ $(function() {
   function handlePostSubmit(form) {
     var postData = $(form).serializeArray()
 
-    var newPost = {
+    var post = {
       title: postData[0].value,
       content: postData[1].value
     }
 
-    $('.list-group').append('<li class="list-group-item"> <h4>' + newPost.title + '</h4> <hr> <p>' + newPost.content + '</p> </li>')
+    $.ajax({
+      type: 'POST',
+      url: '/posts',
+      data: post,
+      success: function(data) {
+        console.log(data);
+        $('.list-group').prepend('<li class="list-group-item"><h4>' + data.title + '</h4><hr><p>' + data.content + '</p></li>')
+        // window.location.href = "/posts/" + data._id
+      },
+      error: function(err) {
+        console.log(err);
+      }
+    });
   }
 })
